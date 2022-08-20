@@ -50,6 +50,7 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: dist
+          path: frontend/web/dist
 
       - name: Auth
         uses: google-github-actions/auth@v0
