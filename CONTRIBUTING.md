@@ -23,13 +23,13 @@ Optional
 
 #### Examples
 
-Commit with title
+Commit with `title`
 
 ```
 :sparkles: create an api to search akikun tweets
 ```
 
-Commit with title and message
+Commit with `title` and `message`
 
 ```
 :sparkles: create an api to search akikun tweets
