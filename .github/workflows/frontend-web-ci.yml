@@ -6,13 +6,14 @@ on:
       - frontend/web/**
       - .github/workflows/frontend-web-ci.yml
 
+defaults:
+  run:
+    working-directory: frontend/web
+
 jobs:
   ci:
     name: CI
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: frontend/web
     steps:
       - uses: actions/checkout@v3
 
