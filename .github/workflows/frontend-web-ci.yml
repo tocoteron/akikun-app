@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - frontend/web/**
+      - .github/workflows/frontend-web-ci.yml
 
 jobs:
   ci:
