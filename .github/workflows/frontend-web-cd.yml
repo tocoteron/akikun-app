@@ -1,0 +1,66 @@
+name: Frontend Web CD
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - frontend/web/**
+      - .github/workflows/frontend-web-cd.yml
+
+defaults:
+  run:
+    working-directory: frontend/web
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: 'yarn'
+          cache-dependency-path: frontend/web/yarn.lock
+
+      - name: Install dependencies
+        run: yarn
+
+      - name: Build
+        run: yarn build
+
+      - name: Archive build artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: dist
+          path: frontend/web/dist
+
+  deploy:
+    name: Deploy
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Download build artifacts
+        uses: actions/download-artifact@v3
+        with:
+          name: dist
+
+      - name: Auth
+        uses: google-github-actions/auth@v0
+        with:
+          credentials_json: ${{ secrets.GCP_SA_KEY_APP_ENGINE }}
+
+      - id: deploy
+        name: Deploy
+        uses: google-github-actions/deploy-appengine@v0
+        with:
+          working_directory: frontend/web
+
+      - name: Test connection
+        run: curl ${{ steps.deploy.outputs.url }}
