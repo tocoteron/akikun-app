@@ -1,5 +1,5 @@
-import React from 'react';
-import { isLocationNotFoundError } from 'rocon/react';
+import React from 'react'
+import { isLocationNotFoundError } from 'rocon/react'
 
 interface Props {
   children: React.ReactElement
@@ -20,9 +20,9 @@ class LocationNotFoundErrorBoundary extends React.Component<Props, State> {
     return { isNotFound: isLocationNotFoundError(error) }
   }
 
-  render = () => this.state.isNotFound ?
-    this.props.fallback :
-    this.props.children
+  render(): React.ReactElement {
+    return this.state.isNotFound ? this.props.fallback : this.props.children
+  }
 }
 
-export default LocationNotFoundErrorBoundary;
+export default LocationNotFoundErrorBoundary

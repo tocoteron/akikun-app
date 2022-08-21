@@ -1,9 +1,9 @@
-import { RoconRoot } from 'rocon/react';
-import Routes from './routes/Routes';
-import LocationNotFoundErrorBoundary from './routes/LocationNotFoundErrorBoundary';
+import { RoconRoot } from 'rocon/react'
+import Routes from './routes/Routes'
+import LocationNotFoundErrorBoundary from './routes/LocationNotFoundErrorBoundary'
 import './App.css'
 
-function App() {
+const App: React.FC = () => {
   return (
     <div className="App">
       <RoconRoot>
