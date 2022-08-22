@@ -1,0 +1,6 @@
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/frontend/web"
+    schedule:
+      interval: "daily"
