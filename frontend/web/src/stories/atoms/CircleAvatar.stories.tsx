@@ -1,5 +1,5 @@
 import { ComponentMeta } from '@storybook/react'
-import CircleAvatar from './CircleAvatar'
+import CircleAvatar from '../../components/atoms/CircleAvatar'
 import { akikun } from '../../mockdata/twitter'
 
 const CircleAvatarMeta: ComponentMeta<typeof CircleAvatar> = {
