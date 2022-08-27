@@ -12,20 +12,7 @@ const Template: ComponentStory<typeof CircleAvatar> = args => (
   <CircleAvatar {...args} />
 )
 
-export const Small = Template.bind({})
-Small.args = {
-  image: akikun.icon,
-  size: 'small',
-}
-
-export const Medium = Template.bind({})
-Medium.args = {
-  image: akikun.icon,
-  size: 'medium',
-}
-
-export const Large = Template.bind({})
-Large.args = {
-  image: akikun.icon,
-  size: 'large',
+export const Default = Template.bind({})
+Default.args = {
+  source: akikun.icon,
 }
