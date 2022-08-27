@@ -10,6 +10,6 @@ export default SkeletonMeta
 
 export const Default: React.FC = () => (
   <Skeleton>
-    <Text text="アキくんすき" size="medium" />
+    <Text text="アキくんすき" />
   </Skeleton>
 )
