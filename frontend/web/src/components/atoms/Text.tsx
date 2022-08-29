@@ -7,7 +7,7 @@ interface TextProps {
 }
 
 const Text: React.FC<TextProps> = ({ text, size = 'medium' }) => {
-  const className = clsx({
+  const className = clsx('whitespace-pre-line', {
     'text-sm': size === 'small',
     'text-base': size === 'medium',
     'text-lg': size === 'large',
