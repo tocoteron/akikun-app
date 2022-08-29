@@ -7,6 +7,11 @@ import Text from '../../components/atoms/Text'
 const VStackMeta: ComponentMeta<typeof VStack> = {
   title: 'Atoms/VStack',
   component: VStack,
+  argTypes: {
+    children: {
+      control: false,
+    },
+  },
 }
 export default VStackMeta
 

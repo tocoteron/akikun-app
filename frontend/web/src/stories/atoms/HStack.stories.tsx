@@ -7,6 +7,11 @@ import Text from '../../components/atoms/Text'
 const HStackMeta: ComponentMeta<typeof HStack> = {
   title: 'Atoms/HStack',
   component: HStack,
+  argTypes: {
+    children: {
+      control: false,
+    },
+  },
 }
 export default HStackMeta
 
