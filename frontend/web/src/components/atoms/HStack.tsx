@@ -5,7 +5,7 @@ import {
   getStackGapXClassName,
   StackAlign,
 } from '../styles/stack'
-import { Space } from '../styles/size'
+import { Space } from '../styles/space'
 
 interface HStackProps {
   align?: StackAlign

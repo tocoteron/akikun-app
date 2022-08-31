@@ -5,7 +5,7 @@ import {
   getStackGapYClassName,
   StackAlign,
 } from '../styles/stack'
-import { Space } from '../styles/size'
+import { Space } from '../styles/space'
 
 interface VStackProps {
   align?: StackAlign

@@ -1,5 +1,5 @@
 import clsx from 'clsx'
-import { Space } from './size'
+import { Space } from './space'
 
 // Compatible with https://tailwindcss.com/docs/align-items
 export type StackAlign = 'start' | 'end' | 'center' | 'baseline' | 'stretch'
