@@ -1,15 +1,11 @@
 import React from 'react'
 
 interface SkeletonProps {
-  children?: React.ReactNode
+  children: React.ReactNode
 }
 
 const Skeleton: React.FC<SkeletonProps> = ({ children }) => {
-  return (
-    <div className="flex justify-center items-center p-2 rounded border-2 border-dashed">
-      {children}
-    </div>
-  )
+  return <div className="bg-gray-200 animate-pulse">{children}</div>
 }
 
 export default Skeleton
