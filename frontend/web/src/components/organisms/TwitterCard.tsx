@@ -19,7 +19,7 @@ const TwitterCard: React.FC<TwitterCardProps> = ({
   date,
 }) => {
   return (
-    <VStack gap="medium">
+    <VStack gap="m">
       <TwitterUser icon={icon} displayName={displayName} userName={userName} />
       <Text text={content} />
       <Text text={date} />

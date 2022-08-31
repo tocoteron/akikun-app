@@ -16,8 +16,8 @@ const TwitterUser: React.FC<TwitterUserProps> = ({
   displayName,
 }) => {
   return (
-    <HStack align="center" gap="medium">
-      <CircleAvatar source={icon} size="small" />
+    <HStack align="center" gap="m">
+      <CircleAvatar source={icon} size="s" />
       <VStack>
         <Text text={displayName} />
         <Text text={`@${userName}`} />

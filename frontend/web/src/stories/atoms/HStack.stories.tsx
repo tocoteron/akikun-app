@@ -22,10 +22,10 @@ Default.args = {
   children: (
     <>
       <Skeleton>
-        <Text text="アキくん" size="medium" />
+        <Text text="アキくん" />
       </Skeleton>
       <Skeleton>
-        <Text text="すき" size="medium" />
+        <Text text="すき" />
       </Skeleton>
     </>
   ),

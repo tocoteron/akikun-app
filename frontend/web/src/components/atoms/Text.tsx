@@ -1,16 +1,17 @@
 import React from 'react'
 import clsx from 'clsx'
+import { Size } from '../styles/size'
 
 interface TextProps {
   text: string
-  size?: 'small' | 'medium' | 'large'
+  size?: Size
 }
 
-const Text: React.FC<TextProps> = ({ text, size = 'medium' }) => {
+const Text: React.FC<TextProps> = ({ text, size = 'm' }) => {
   const className = clsx('whitespace-pre-line', {
-    'text-sm': size === 'small',
-    'text-base': size === 'medium',
-    'text-lg': size === 'large',
+    'text-sm': size === 's',
+    'text-base': size === 'm',
+    'text-lg': size === 'l',
   })
   return <p className={className}>{text}</p>
 }

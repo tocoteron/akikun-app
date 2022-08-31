@@ -4,12 +4,12 @@ import {
   getStackAlignClassName,
   getStackGapYClassName,
   StackAlign,
-  StackGap,
 } from '../styles/stack'
+import { Space } from '../styles/size'
 
 interface VStackProps {
   align?: StackAlign
-  gap?: StackGap
+  gap?: Space
   children: React.ReactNode
 }
 
