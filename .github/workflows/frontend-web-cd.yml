@@ -36,6 +36,9 @@ jobs:
       - name: Build
         run: yarn build
 
+      - name: Build Storybook
+        run: yarn build-storybook
+
       - name: Archive build artifacts
         uses: actions/upload-artifact@v3
         with:
