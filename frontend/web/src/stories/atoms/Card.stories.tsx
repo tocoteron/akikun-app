@@ -1,9 +1,8 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
-
-import Card from '../../components/atoms/Card'
-import Skeleton from '../../components/atoms/Skeleton'
-import Text from '../../components/atoms/Text'
-import VStack from '../../components/atoms/VStack'
+import Card from '~/components/atoms/Card'
+import Skeleton from '~/components/atoms/Skeleton'
+import Text from '~/components/atoms/Text'
+import VStack from '~/components/atoms/VStack'
 
 const CardMeta: ComponentMeta<typeof Card> = {
   title: 'Atoms/Card',

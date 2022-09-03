@@ -1,6 +1,6 @@
 import React from 'react'
 import clsx from 'clsx'
-import { Size } from '../styles/size'
+import { Size } from '~/components/styles/size'
 
 interface CircleAvatarProps {
   source: string

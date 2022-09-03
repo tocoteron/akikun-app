@@ -1,8 +1,8 @@
 import React from 'react'
-import TwitterUser from '../molecules/TwitterUser'
-import Text from '../atoms/Text'
-import VStack from '../atoms/VStack'
-import Card from '../atoms/Card'
+import TwitterUser from '~/components/molecules/TwitterUser'
+import Text from '~/components/atoms/Text'
+import VStack from '~/components/atoms/VStack'
+import Card from '~/components/atoms/Card'
 
 interface TwitterCardProps {
   icon: string

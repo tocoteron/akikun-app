@@ -1,8 +1,8 @@
 import React from 'react'
-import VStack from '../atoms/VStack'
-import HStack from '../atoms/HStack'
-import CircleAvatar from '../atoms/CircleAvatar'
-import Text from '../atoms/Text'
+import VStack from '~/components/atoms/VStack'
+import HStack from '~/components/atoms/HStack'
+import CircleAvatar from '~/components/atoms/CircleAvatar'
+import Text from '~/components/atoms/Text'
 
 interface TwitterUserProps {
   icon: string

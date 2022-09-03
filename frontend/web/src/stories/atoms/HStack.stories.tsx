@@ -1,8 +1,7 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
-
-import HStack from '../../components/atoms/HStack'
-import Skeleton from '../../components/atoms/Skeleton'
-import Text from '../../components/atoms/Text'
+import HStack from '~/components/atoms/HStack'
+import Skeleton from '~/components/atoms/Skeleton'
+import Text from '~/components/atoms/Text'
 
 const HStackMeta: ComponentMeta<typeof HStack> = {
   title: 'Atoms/HStack',

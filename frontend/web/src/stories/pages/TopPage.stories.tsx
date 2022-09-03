@@ -1,6 +1,5 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
-
-import TopPage from '../../components/pages/TopPage'
+import TopPage from '~/components/pages/TopPage'
 
 const TwitterCardMeta: ComponentMeta<typeof TopPage> = {
   title: 'Pages/TopPage',

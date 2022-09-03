@@ -1,6 +1,5 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
-
-import SearchForm from '../../components/molecules/SearchForm'
+import SearchForm from '~/components/molecules/SearchForm'
 
 const SearchFormMeta: ComponentMeta<typeof SearchForm> = {
   title: 'Molecules/SearchForm',

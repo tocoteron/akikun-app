@@ -1,8 +1,8 @@
 import React from 'react'
-import Grid from '../atoms/Grid'
-import VStack from '../atoms/VStack'
-import SearchForm from '../molecules/SearchForm'
-import TwitterCard from '../organisms/TwitterCard'
+import Grid from '~/components/atoms/Grid'
+import VStack from '~/components/atoms/VStack'
+import SearchForm from '~/components/molecules/SearchForm'
+import TwitterCard from '~/components/organisms/TwitterCard'
 
 interface TweetAuthor {
   icon: string

@@ -1,5 +1,5 @@
 import Rocon, { useRoutes } from 'rocon/react'
-import TopPage from '../components/pages/TopPage'
+import TopPage from '~/components/pages/TopPage'
 
 const routes = Rocon.Path().exact({ action: () => <TopPage /> })
 

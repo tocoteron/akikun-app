@@ -1,7 +1,7 @@
 import React from 'react'
 import clsx from 'clsx'
-import { Quantity } from '../styles/quantity'
-import { Space } from '../styles/space'
+import { Quantity } from '~/components/styles/quantity'
+import { Space } from '~/components/styles/space'
 
 interface GridProps {
   quantity?: Quantity

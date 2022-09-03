@@ -1,7 +1,6 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
-import { akikun, tweet } from '../../mockdata/twitter'
-
-import TwitterCard from '../../components/organisms/TwitterCard'
+import { akikun, tweet } from '~/mockdata/twitter'
+import TwitterCard from '~/components/organisms/TwitterCard'
 
 const TwitterCardMeta: ComponentMeta<typeof TwitterCard> = {
   title: 'Organisms/TwitterCard',

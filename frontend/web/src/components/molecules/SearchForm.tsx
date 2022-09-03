@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import HStack from '../atoms/HStack'
-import Input from '../atoms/Input'
-import Button from '../atoms/Button'
+import HStack from '~/components/atoms/HStack'
+import Input from '~/components/atoms/Input'
+import Button from '~/components/atoms/Button'
 
 interface SearchFormProps {
   onSubmit: (value: string) => void

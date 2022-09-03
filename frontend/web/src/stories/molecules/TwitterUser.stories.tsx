@@ -1,7 +1,6 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
-import { akikun } from '../../mockdata/twitter'
-
-import TwitterUser from '../../components/molecules/TwitterUser'
+import { akikun } from '~/mockdata/twitter'
+import TwitterUser from '~/components/molecules/TwitterUser'
 
 const TwitterUserMeta: ComponentMeta<typeof TwitterUser> = {
   title: 'Molecules/TwitterUser',

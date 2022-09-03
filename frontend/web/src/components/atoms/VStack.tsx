@@ -4,8 +4,8 @@ import {
   getStackAlignClassName,
   getStackGapYClassName,
   StackAlign,
-} from '../styles/stack'
-import { Space } from '../styles/space'
+} from '~/components/styles/stack'
+import { Space } from '~/components/styles/space'
 
 interface VStackProps {
   align?: StackAlign

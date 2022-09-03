@@ -1,6 +1,5 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react'
-
-import Input from '../../components/atoms/Input'
+import Input from '~/components/atoms/Input'
 
 const ButtonMeta: ComponentMeta<typeof Input> = {
   title: 'Atoms/Input',

@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import SearchTemplate from '../templates/SearchTemplate'
-import { akikun, tweets } from '../../mockdata/twitter'
+import SearchTemplate from '~/components/templates/SearchTemplate'
+import { akikun, tweets } from '~/mockdata/twitter'
 
 const akikunTweets = tweets.map(tweet => ({
   author: {

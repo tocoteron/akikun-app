@@ -1,7 +1,6 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
-import { akikun, tweets } from '../../mockdata/twitter'
-
-import SearchTemplate from '../../components/templates/SearchTemplate'
+import { akikun, tweets } from '~/mockdata/twitter'
+import SearchTemplate from '~/components/templates/SearchTemplate'
 
 const TwitterCardMeta: ComponentMeta<typeof SearchTemplate> = {
   title: 'Templates/SearchTemplate',

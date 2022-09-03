@@ -1,8 +1,7 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
-
-import Grid from '../../components/atoms/Grid'
-import Skeleton from '../../components/atoms/Skeleton'
-import Text from '../../components/atoms/Text'
+import Grid from '~/components/atoms/Grid'
+import Skeleton from '~/components/atoms/Skeleton'
+import Text from '~/components/atoms/Text'
 
 const GridMeta: ComponentMeta<typeof Grid> = {
   title: 'Atoms/Grid',
