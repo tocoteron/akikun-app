@@ -6,8 +6,8 @@ import Card from '../atoms/Card'
 
 interface TwitterCardProps {
   icon: string
-  userName: string
   displayName: string
+  userName: string
   content: string
   date: string
 }
