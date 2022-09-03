@@ -1,7 +1,6 @@
 import { RoconRoot } from 'rocon/react'
 import Routes from './routes/Routes'
 import LocationNotFoundErrorBoundary from './routes/LocationNotFoundErrorBoundary'
-import './App.css'
 
 const App: React.FC = () => {
   return (
