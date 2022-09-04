@@ -10,13 +10,20 @@ interface SearchFormProps {
 const SearchForm: React.FC<SearchFormProps> = ({ onSubmit }) => {
   const [searchText, setSearchText] = useState('')
 
-  const onClick = (): void => onSubmit(searchText)
+  const onSubmitForm = (event: React.FormEvent<HTMLFormElement>): void => {
+    event.preventDefault()
+    onSubmit(searchText)
+  }
+
+  const onClickSearch = (): void => onSubmit(searchText)
 
   return (
-    <HStack align="center" gap="m">
-      <Input type="search" value={searchText} onChange={setSearchText} />
-      <Button label="検索" onClick={onClick} />
-    </HStack>
+    <form onSubmit={onSubmitForm}>
+      <HStack align="center" gap="m">
+        <Input type="search" value={searchText} onChange={setSearchText} />
+        <Button label="検索" onClick={onClickSearch} />
+      </HStack>
+    </form>
   )
 }
 
