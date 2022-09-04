@@ -12,7 +12,7 @@ interface TwitterCardProps {
   date: string
 }
 
-const TwitterCard: React.FC<TwitterCardProps> = ({
+const TweetCard: React.FC<TwitterCardProps> = ({
   icon,
   displayName,
   userName,
@@ -34,4 +34,4 @@ const TwitterCard: React.FC<TwitterCardProps> = ({
   )
 }
 
-export default TwitterCard
+export default TweetCard

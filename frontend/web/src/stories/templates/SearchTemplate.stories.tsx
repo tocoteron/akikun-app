@@ -1,5 +1,5 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
-import { akikun, tweets } from '~/mockdata/twitter'
+import { tweets } from '~/mockdata/twitter'
 import SearchTemplate from '~/components/templates/SearchTemplate'
 
 const TwitterCardMeta: ComponentMeta<typeof SearchTemplate> = {
@@ -16,9 +16,9 @@ export const Default = Template.bind({})
 Default.args = {
   tweets: tweets.map(tweet => ({
     author: {
-      icon: akikun.icon,
-      displayName: akikun.displayName,
-      userName: akikun.userName,
+      icon: tweet.author.icon,
+      displayName: tweet.author.displayName,
+      userName: tweet.author.userName,
     },
     content: tweet.content,
     date: tweet.date,

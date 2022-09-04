@@ -1,12 +1,12 @@
 import { useState } from 'react'
 import SearchTemplate from '~/components/templates/SearchTemplate'
-import { akikun, tweets } from '~/mockdata/twitter'
+import { tweets } from '~/mockdata/twitter'
 
 const akikunTweets = tweets.map(tweet => ({
   author: {
-    icon: akikun.icon,
-    displayName: akikun.displayName,
-    userName: akikun.userName,
+    icon: tweet.author.icon,
+    displayName: tweet.author.displayName,
+    userName: tweet.author.userName,
   },
   content: tweet.content,
   date: tweet.date,

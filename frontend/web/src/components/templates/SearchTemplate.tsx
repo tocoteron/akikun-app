@@ -2,7 +2,7 @@ import React from 'react'
 import Grid from '~/components/atoms/Grid'
 import VStack from '~/components/atoms/VStack'
 import SearchForm from '~/components/molecules/SearchForm'
-import TwitterCard from '~/components/organisms/TwitterCard'
+import TweetCard from '~/components/organisms/TweetCard'
 
 interface TweetAuthor {
   icon: string
@@ -32,7 +32,7 @@ const SearchTemplate: React.FC<SearchTemplateProps> = ({
           <SearchForm onSubmit={onSubmit} />
           <Grid quantity="many" gap="m">
             {tweets.map(tweet => (
-              <TwitterCard
+              <TweetCard
                 key={tweet.date}
                 icon={tweet.author.icon}
                 displayName={tweet.author.displayName}
