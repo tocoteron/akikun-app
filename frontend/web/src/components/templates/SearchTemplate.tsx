@@ -11,6 +11,7 @@ interface TweetAuthor {
 }
 
 interface Tweet {
+  id: string
   author: TweetAuthor
   content: string
   date: string
@@ -33,7 +34,7 @@ const SearchTemplate: React.FC<SearchTemplateProps> = ({
           <Grid quantity="many" gap="m">
             {tweets.map(tweet => (
               <TweetCard
-                key={tweet.date}
+                key={tweet.id}
                 icon={tweet.author.icon}
                 displayName={tweet.author.displayName}
                 userName={tweet.author.userName}

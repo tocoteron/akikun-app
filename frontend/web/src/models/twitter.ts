@@ -1,11 +1,13 @@
 export interface User {
+  id: string
   icon: string
   userName: string
   displayName: string
 }
 
 export interface Tweet {
-  author: User
+  id: string
   content: string
   date: string
+  author: User
 }

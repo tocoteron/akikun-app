@@ -3,13 +3,7 @@ import SearchTemplate from '~/components/templates/SearchTemplate'
 import { tweets } from '~/mockdata/twitter'
 
 const akikunTweets = tweets.map(tweet => ({
-  author: {
-    icon: tweet.author.icon,
-    displayName: tweet.author.displayName,
-    userName: tweet.author.userName,
-  },
-  content: tweet.content,
-  date: tweet.date,
+  ...tweet,
 }))
 
 const TopPage: React.FC = () => {
