@@ -1,0 +1,37 @@
+name: Infrastructure CI for prd environment
+
+on:
+  push:
+    paths:
+      - infrastructure/module/**
+      - infrastructure/prd/**
+      - .github/workflows/infrastructure-prd-ci.yml
+
+defaults:
+  run:
+    working-directory: infrastructure/prd
+
+env:
+  GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS_PRD }}
+
+jobs:
+  ci:
+    name: CI
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v2
+      
+      - name: Terraform format
+        run: terraform fmt -recursive -check
+
+      - name: Terraform init
+        run: terraform init
+
+      - name: Terraform validate
+        run: terraform validate
+
+      - name: Terraform plan
+        run: terraform plan
