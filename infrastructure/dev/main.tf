@@ -1,10 +1,16 @@
+locals {
+  project = "akikun-dev"
+  region  = "asia-northeast1"
+}
+
 terraform {
   backend "gcs" {
     bucket = "akikun-dev-tfstate"
   }
 }
 
-provider "google" {
-  project = "akikun-dev"
-  region  = "asia-northeast1"
+module "main" {
+  source         = "../module"
+  project        = local.project
+  region         = local.region
 }
