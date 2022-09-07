@@ -3,6 +3,7 @@ name: Infrastructure CI for dev environment
 on:
   push:
     paths:
+      - infrastructure/module/**
       - infrastructure/dev/**
       - .github/workflows/infrastructure-dev-ci.yml
 

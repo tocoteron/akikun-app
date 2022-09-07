@@ -6,6 +6,7 @@ on:
     branches:
       - develop
     paths:
+      - infrastructure/module/**
       - infrastructure/dev/**
       - .github/workflows/infrastructure-dev-cd.yml
 
