@@ -10,7 +10,7 @@ terraform {
 }
 
 module "main" {
-  source         = "../module"
-  project        = local.project
-  region         = local.region
+  source  = "../module"
+  project = local.project
+  region  = local.region
 }
