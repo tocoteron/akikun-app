@@ -1,5 +1,4 @@
 service: web-frontend
-version: v0
 
 runtime: nodejs16
 env: standard
