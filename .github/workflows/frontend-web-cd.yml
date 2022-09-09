@@ -58,10 +58,17 @@ jobs:
           name: dist
           path: frontend/web/dist
 
-      - name: Auth
+      - name: Auth dev environment
+        if: ${{ github.ref_name == 'develop' }}
         uses: google-github-actions/auth@v0
         with:
-          credentials_json: ${{ secrets.GCP_SA_KEY_APP_ENGINE }}
+          credentials_json: ${{ secrets.GOOGLE_CREDENTIALS_DEV }}
+
+      - name: Auth prd environment
+        if: ${{ github.ref_name == 'main' }}
+        uses: google-github-actions/auth@v0
+        with:
+          credentials_json: ${{ secrets.GOOGLE_CREDENTIALS_PRD }}
 
       - id: deploy
         name: Deploy
