@@ -1,0 +1,47 @@
+name: Backend Web CD
+
+on:
+  push:
+    branches:
+      - develop
+      - main
+    paths:
+      - backend/api/web/**
+      - .github/workflows/backend-web-cd.yml
+
+jobs:
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    outputs:
+      url: ${{ steps.deploy.outputs.url }}
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Auth dev environment
+        if: ${{ github.ref_name == 'develop' }}
+        uses: google-github-actions/auth@v0
+        with:
+          credentials_json: ${{ secrets.GOOGLE_CREDENTIALS_DEV }}
+
+      - name: Auth prd environment
+        if: ${{ github.ref_name == 'main' }}
+        uses: google-github-actions/auth@v0
+        with:
+          credentials_json: ${{ secrets.GOOGLE_CREDENTIALS_PRD }}
+      
+      - id: deploy
+        name: Deploy
+        uses: google-github-actions/deploy-cloudrun@v0
+        with:
+          service: web-backend
+          region: asia-northeast1
+          source: backend/api/web
+
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    needs: deploy
+    steps:
+      - name: Test connection
+        run: curl ${{ needs.deploy.outputs.url }}
