@@ -1,6 +1,7 @@
 name: Backend Web CD
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - develop
