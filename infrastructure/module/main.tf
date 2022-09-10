@@ -19,7 +19,7 @@ data "google_iam_policy" "cloud_run_noauth" {
   }
 }
 
-resource "google_cloud_run_service_iam_policy" "noauth" {
+resource "google_cloud_run_service_iam_policy" "web_backend_noauth" {
   location = google_cloud_run_service.web_backend.location
   project  = google_cloud_run_service.web_backend.project
   service  = google_cloud_run_service.web_backend.name
