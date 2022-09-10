@@ -1,6 +1,7 @@
 locals {
   project = "akikun-dev"
   region  = "asia-northeast1"
+  domain  = "dev.akikun.app"
 }
 
 terraform {
@@ -13,4 +14,5 @@ module "main" {
   source  = "../module"
   project = local.project
   region  = local.region
+  domain  = local.domain
 }
