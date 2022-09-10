@@ -39,3 +39,11 @@ resource "google_cloud_run_domain_mapping" "web_backend_domain" {
     route_name = google_cloud_run_service.web_backend.name
   }
 }
+
+resource "google_app_engine_domain_mapping" "web_frotnend_domain" {
+  domain_name = var.domain
+
+  ssl_settings {
+    ssl_management_type = "AUTOMATIC"
+  }
+}
