@@ -7,12 +7,22 @@ resource "google_cloud_run_service" "web_backend" {
   name = "web-backend"
   location = var.region
 
-  template {
-    spec {
-      containers {
-        # Fake image
-        image = "us-docker.pkg.dev/cloudrun/container/hello"
-      }
-    }
+  template {}
+}
+
+data "google_iam_policy" "cloud_run_noauth" {
+  binding {
+    role = "roles/run.invoker"
+    members = [
+      "allUsers",
+    ]
   }
+}
+
+resource "google_cloud_run_service_iam_policy" "noauth" {
+  location    = google_cloud_run_service.web_backend.location
+  project     = google_cloud_run_service.web_backend.project
+  service     = google_cloud_run_service.web_backend.name
+
+  policy_data = data.google_iam_policy.cloud_run_noauth.policy_data
 }
