@@ -11,3 +11,8 @@ twitter-api-v2@^1.12.6:
   version "1.12.6"
   resolved "https://registry.yarnpkg.com/twitter-api-v2/-/twitter-api-v2-1.12.6.tgz#ce09910074fc8dc18fd09dab97e57303ec20927a"
   integrity sha512-KLpi4dNbxgX/eBWG323LqNhQdHXT6aD4g5cFj1tOIQqYtNCh/VuJZ5YBr+UJUe0FsTQWPF9M5aFoHaxM041iUQ==
+
+typescript@^4.8.3:
+  version "4.8.3"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.8.3.tgz#d59344522c4bc464a65a730ac695007fdb66dd88"
+  integrity sha512-goMHfm00nWPa8UvR/CPSvykqf6dVV8x/dp0c5mFTMTIu0u0FlGWRioyy7Nn0PGAdHxpJZnuO/ut+PpQ8UiHAig==
