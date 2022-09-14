@@ -2,5 +2,8 @@
   "name": "tweet-collector",
   "version": "1.0.0",
   "main": "index.js",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "twitter-api-v2": "^1.12.6"
+  }
 }
