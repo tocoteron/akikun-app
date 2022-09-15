@@ -26,3 +26,22 @@ resource "google_firestore_document" "akikun_twitter_tweets" {
     }
     EOT
 }
+
+resource "google_firestore_document" "akikun_twitter_accounts" {
+  project     = var.project
+  collection  = "${google_firestore_document.akikun_twitter.path}/accounts"
+  document_id = "958675678689243137"
+  fields      = <<EOT
+    {
+        "id": {
+            "stringValue": "958675678689243137"
+        },
+        "username": {
+            "stringValue": "aki_suzuya"
+        },
+        "name": {
+            "stringValue": "鈴谷アキ🐈にじさんじ所属"
+        }
+    }
+    EOT
+}
