@@ -17,7 +17,7 @@
 Run containers:
 
 ```sh
-docker-compose up
+TWITTER_API_BEARER_TOKEN=YOUR_TOKEN docker-compose up
 ```
 
 Stop containers:

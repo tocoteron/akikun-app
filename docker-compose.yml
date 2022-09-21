@@ -1,8 +1,24 @@
 version: "3.9"
 services:
+  firestore:
+    image: mtlynch/firestore-emulator
+    environment:
+      - PORT=8200
+      - FIRESTORE_PROJECT_ID=dummy-project-id
+    ports:
+      - 8200:8200
   api:
     build: ./backend/api/web
     ports:
       - "8080:8080"
     environment:
       - PORT=8080
+  tweet-collector:
+    build: ./backend/batch/tweet-collector
+    ports:
+      - "8081:8080"
+    environment:
+      - PORT=8080
+      - FIRESTORE_EMULATOR_HOST=firestore:8200
+      - FIRESTORE_PROJECT_ID=dummy-project-id
+      - TWITTER_API_BEARER_TOKEN=$TWITTER_API_BEARER_TOKEN
