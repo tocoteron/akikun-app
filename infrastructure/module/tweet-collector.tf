@@ -2,13 +2,7 @@ resource "google_cloud_run_service" "tweet_collector" {
   name     = "tweet-collector"
   location = var.region
 
-  template {
-    spec {
-      containers {
-        image = "us-docker.pkg.dev/cloudrun/container/hello"
-      }
-    }
-  }
+  template {}
 }
 
 resource "google_cloud_run_service_iam_policy" "tweet_collector_noauth" {
