@@ -5,15 +5,6 @@ resource "google_cloud_run_service" "web_backend" {
   template {}
 }
 
-data "google_iam_policy" "cloud_run_noauth" {
-  binding {
-    role = "roles/run.invoker"
-    members = [
-      "allUsers",
-    ]
-  }
-}
-
 resource "google_cloud_run_service_iam_policy" "web_backend_noauth" {
   location = google_cloud_run_service.web_backend.location
   project  = google_cloud_run_service.web_backend.project
