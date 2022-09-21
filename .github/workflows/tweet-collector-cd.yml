@@ -40,7 +40,7 @@ jobs:
           service: tweet-collector
           region: asia-northeast1
           source: backend/batch/tweet-collector
-          env_vars: 'TWITTER_API_BEARER_TOKEN="${{ secrets.TWITTER_API_BEARER_TOKEN_DEV }}"'
+          env_vars: 'TWITTER_API_BEARER_TOKEN=${{ secrets.TWITTER_API_BEARER_TOKEN_DEV }}'
 
       - id: deploy-prd
         name: Deploy prd environment
@@ -50,7 +50,7 @@ jobs:
           service: tweet-collector
           region: asia-northeast1
           source: backend/batch/tweet-collector
-          env_vars: 'TWITTER_API_BEARER_TOKEN="${{ secrets.TWITTER_API_BEARER_TOKEN_PRD }}"'
+          env_vars: 'TWITTER_API_BEARER_TOKEN=${{ secrets.TWITTER_API_BEARER_TOKEN_PRD }}'
 
   test:
     name: Test
