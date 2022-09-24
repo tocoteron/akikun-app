@@ -1,0 +1,16 @@
+extend type Query {
+  tweets: [Tweet!]!
+}
+
+type TwitterUser {
+  id: ID!
+  username: String
+  name: String 
+}
+
+type Tweet {
+  id: ID!
+  authorId: ID!
+  text: String!
+  createdAt: String!
+}

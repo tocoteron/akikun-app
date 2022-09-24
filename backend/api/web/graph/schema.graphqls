@@ -2,19 +2,4 @@
 #
 # https://gqlgen.com/getting-started/
 
-type TwitterUser {
-  id: ID!
-  username: String
-  name: String 
-}
-
-type Tweet {
-  id: ID!
-  authorId: ID!
-  text: String!
-  tweetedAt: String!
-}
-
-type Query {
-  tweets: [Tweet!]!
-}
+type Query

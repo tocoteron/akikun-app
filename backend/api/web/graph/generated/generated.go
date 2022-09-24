@@ -49,9 +49,9 @@ type ComplexityRoot struct {
 
 	Tweet struct {
 		AuthorID  func(childComplexity int) int
+		CreatedAt func(childComplexity int) int
 		ID        func(childComplexity int) int
 		Text      func(childComplexity int) int
-		TweetedAt func(childComplexity int) int
 	}
 
 	TwitterUser struct {
@@ -94,6 +94,13 @@ func (e *executableSchema) Complexity(typeName, field string, childComplexity in
 
 		return e.complexity.Tweet.AuthorID(childComplexity), true
 
+	case "Tweet.createdAt":
+		if e.complexity.Tweet.CreatedAt == nil {
+			break
+		}
+
+		return e.complexity.Tweet.CreatedAt(childComplexity), true
+
 	case "Tweet.id":
 		if e.complexity.Tweet.ID == nil {
 			break
@@ -107,13 +114,6 @@ func (e *executableSchema) Complexity(typeName, field string, childComplexity in
 		}
 
 		return e.complexity.Tweet.Text(childComplexity), true
-
-	case "Tweet.tweetedAt":
-		if e.complexity.Tweet.TweetedAt == nil {
-			break
-		}
-
-		return e.complexity.Tweet.TweetedAt(childComplexity), true
 
 	case "TwitterUser.id":
 		if e.complexity.TwitterUser.ID == nil {
@@ -192,6 +192,12 @@ var sources = []*ast.Source{
 #
 # https://gqlgen.com/getting-started/
 
+type Query
+`, BuiltIn: false},
+	{Name: "../twitter.graphqls", Input: `extend type Query {
+  tweets: [Tweet!]!
+}
+
 type TwitterUser {
   id: ID!
   username: String
@@ -202,11 +208,7 @@ type Tweet {
   id: ID!
   authorId: ID!
   text: String!
-  tweetedAt: String!
-}
-
-type Query {
-  tweets: [Tweet!]!
+  createdAt: String!
 }
 `, BuiltIn: false},
 }
@@ -314,8 +316,8 @@ func (ec *executionContext) fieldContext_Query_tweets(ctx context.Context, field
 				return ec.fieldContext_Tweet_authorId(ctx, field)
 			case "text":
 				return ec.fieldContext_Tweet_text(ctx, field)
-			case "tweetedAt":
-				return ec.fieldContext_Tweet_tweetedAt(ctx, field)
+			case "createdAt":
+				return ec.fieldContext_Tweet_createdAt(ctx, field)
 			}
 			return nil, fmt.Errorf("no field named %q was found under type Tweet", field.Name)
 		},
@@ -584,8 +586,8 @@ func (ec *executionContext) fieldContext_Tweet_text(ctx context.Context, field g
 	return fc, nil
 }
 
-func (ec *executionContext) _Tweet_tweetedAt(ctx context.Context, field graphql.CollectedField, obj *model.Tweet) (ret graphql.Marshaler) {
-	fc, err := ec.fieldContext_Tweet_tweetedAt(ctx, field)
+func (ec *executionContext) _Tweet_createdAt(ctx context.Context, field graphql.CollectedField, obj *model.Tweet) (ret graphql.Marshaler) {
+	fc, err := ec.fieldContext_Tweet_createdAt(ctx, field)
 	if err != nil {
 		return graphql.Null
 	}
@@ -598,7 +600,7 @@ func (ec *executionContext) _Tweet_tweetedAt(ctx context.Context, field graphql.
 	}()
 	resTmp, err := ec.ResolverMiddleware(ctx, func(rctx context.Context) (interface{}, error) {
 		ctx = rctx // use context from middleware stack in children
-		return obj.TweetedAt, nil
+		return obj.CreatedAt, nil
 	})
 	if err != nil {
 		ec.Error(ctx, err)
@@ -615,7 +617,7 @@ func (ec *executionContext) _Tweet_tweetedAt(ctx context.Context, field graphql.
 	return ec.marshalNString2string(ctx, field.Selections, res)
 }
 
-func (ec *executionContext) fieldContext_Tweet_tweetedAt(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
+func (ec *executionContext) fieldContext_Tweet_createdAt(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
 	fc = &graphql.FieldContext{
 		Object:     "Tweet",
 		Field:      field,
@@ -2631,9 +2633,9 @@ func (ec *executionContext) _Tweet(ctx context.Context, sel ast.SelectionSet, ob
 			if out.Values[i] == graphql.Null {
 				invalids++
 			}
-		case "tweetedAt":
+		case "createdAt":
 
-			out.Values[i] = ec._Tweet_tweetedAt(ctx, field, obj)
+			out.Values[i] = ec._Tweet_createdAt(ctx, field, obj)
 
 			if out.Values[i] == graphql.Null {
 				invalids++
