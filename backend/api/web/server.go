@@ -7,8 +7,8 @@ import (
 
 	"github.com/99designs/gqlgen/graphql/handler"
 	"github.com/99designs/gqlgen/graphql/playground"
-	"github.com/tocoteron/akikun-app/backend/api/web/graph"
 	"github.com/tocoteron/akikun-app/backend/api/web/graph/generated"
+	"github.com/tocoteron/akikun-app/backend/api/web/graph/resolver"
 	"github.com/tocoteron/akikun-app/backend/api/web/repository"
 )
 
@@ -24,7 +24,7 @@ func main() {
 	tweetRepo := repository.NewFirestoreTweetRepository(nil, "akikun/twitter/tweets")
 
 	// Root resolver
-	resolver := graph.NewResolver(tweetRepo)
+	resolver := resolver.NewResolver(tweetRepo)
 
 	// Server
 	srv := handler.NewDefaultServer(generated.NewExecutableSchema(generated.Config{Resolvers: resolver}))

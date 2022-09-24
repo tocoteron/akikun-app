@@ -1,4 +1,4 @@
-package graph
+package resolver
 
 import "github.com/tocoteron/akikun-app/backend/api/web/repository"
 
