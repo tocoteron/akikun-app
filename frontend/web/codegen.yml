@@ -1,12 +1,13 @@
 overwrite: true
-schema: "../../backend/api/web/graph/schema/*.graphqls"
-documents: "src/**/*.graphql"
+schema: '../../backend/api/web/graph/schema/*.graphqls'
+documents: 'src/**/*.graphql'
 generates:
   src/generated/graphql.ts:
     plugins:
-      - "typescript"
-      - "typescript-operations"
-      - "urql-introspection"
+      - 'typescript'
+      - 'typescript-operations'
+      - 'typescript-urql'
+      - 'urql-introspection'
   ./graphql.schema.json:
     plugins:
-      - "introspection"
+      - 'introspection'
