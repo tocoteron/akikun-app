@@ -23,6 +23,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.19.1",
+    "@graphql-codegen/cli": "^2.12.1",
     "@storybook/addon-actions": "^6.5.10",
     "@storybook/addon-essentials": "^6.5.12",
     "@storybook/addon-interactions": "^6.5.10",
