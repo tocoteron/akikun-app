@@ -37,8 +37,9 @@ jobs:
       - name: Build
         run: yarn build
 
-      - name: Build Storybook
-        run: yarn build-storybook
+      # Disabled because this is heavy process
+      # - name: Build Storybook
+      #   run: yarn build-storybook
 
       - name: Archive build artifacts
         uses: actions/upload-artifact@v3
