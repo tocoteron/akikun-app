@@ -15,7 +15,7 @@ resource "google_cloud_run_service_iam_policy" "tweet_collector_noauth" {
 
 resource "google_cloud_scheduler_job" "tweet_collector_invocation" {
   name        = "tweet-collector-invocation"
-  schedule    = "0 * * * *"
+  schedule    = "0 0 * * *"
   time_zone   = "Asia/Tokyo"
 
   http_target {
