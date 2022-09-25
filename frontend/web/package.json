@@ -8,6 +8,8 @@
     "dev": "vite",
     "prebuild": "yarn codegen",
     "build": "tsc && vite build",
+    "build:dev": "tsc && vite build --mode dev",
+    "build:prd": "tsc && vite build --mode prd",
     "preview": "vite preview",
     "lint": "eslint --ext .tsx,.ts . && prettier --check .",
     "format": "eslint --fix --ext .tsx,.ts . && prettier --write .",

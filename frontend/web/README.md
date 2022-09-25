@@ -24,8 +24,22 @@ yarn dev
 
 #### Build
 
+Local environment:
+
 ```
 yarn build
+```
+
+Development environment:
+
+```
+yarn build:dev
+```
+
+Production environment:
+
+```
+yarn build:prd
 ```
 
 ### Storybook

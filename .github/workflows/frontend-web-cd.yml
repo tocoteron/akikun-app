@@ -34,8 +34,13 @@ jobs:
       - name: Lint
         run: yarn lint
 
-      - name: Build
-        run: yarn build
+      - name: Build for dev environment
+        if: ${{ github.ref_name == 'develop' }}
+        run: yarn build:dev
+
+      - name: Build for prd environment
+        if: ${{ github.ref_name == 'main' }}
+        run: yarn build:prd
 
       # Disabled because this is heavy process
       # - name: Build Storybook

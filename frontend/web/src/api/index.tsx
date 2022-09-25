@@ -2,7 +2,7 @@ import React from 'react'
 import { createClient, Provider } from 'urql'
 
 const client = createClient({
-  url: 'http://localhost:8080/graphql',
+  url: import.meta.env.VITE_API_ENDPOINT,
   suspense: true,
 })
 
