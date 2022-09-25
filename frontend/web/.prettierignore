@@ -1,2 +1,4 @@
 dist
 storybook-static
+src/generated
+graphql.schema.json
