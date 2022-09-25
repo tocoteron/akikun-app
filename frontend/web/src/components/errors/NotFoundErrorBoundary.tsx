@@ -2,15 +2,15 @@ import React from 'react'
 import { isLocationNotFoundError } from 'rocon/react'
 
 interface Props {
-  children: React.ReactElement
-  fallback: React.ReactElement
+  children: React.ReactNode
+  fallback: React.ReactNode
 }
 
 interface State {
   isNotFound: boolean
 }
 
-class LocationNotFoundErrorBoundary extends React.Component<Props, State> {
+class NotFoundErrorBoundary extends React.Component<Props, State> {
   constructor(props: Props) {
     super(props)
     this.state = { isNotFound: false }
@@ -20,9 +20,9 @@ class LocationNotFoundErrorBoundary extends React.Component<Props, State> {
     return { isNotFound: isLocationNotFoundError(error) }
   }
 
-  render(): React.ReactElement {
+  render(): React.ReactNode {
     return this.state.isNotFound ? this.props.fallback : this.props.children
   }
 }
 
-export default LocationNotFoundErrorBoundary
+export default NotFoundErrorBoundary

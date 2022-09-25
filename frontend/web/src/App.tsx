@@ -1,16 +1,26 @@
+import { Suspense } from 'react'
 import { RoconRoot } from 'rocon/react'
+import { APIProvider } from '~/api'
 import Routes from '~/routes/Routes'
-import LocationNotFoundErrorBoundary from '~/routes/LocationNotFoundErrorBoundary'
+import ErrorBoundary from '~/components/errors/ErrorBoundary'
+import NotFoundErrorBoundary from '~/components/errors/NotFoundErrorBoundary'
+import ErrorPage from '~/components/pages/ErrorPage'
+import NotFoundPage from '~/components/pages/NotFoundPage'
+import LoadingPage from '~/components/pages/LoadingPage'
 
 const App: React.FC = () => {
   return (
-    <div className="App">
+    <APIProvider>
       <RoconRoot>
-        <LocationNotFoundErrorBoundary fallback={<div>Not found</div>}>
-          <Routes />
-        </LocationNotFoundErrorBoundary>
+        <ErrorBoundary fallback={<ErrorPage />}>
+          <NotFoundErrorBoundary fallback={<NotFoundPage />}>
+            <Suspense fallback={<LoadingPage />}>
+              <Routes />
+            </Suspense>
+          </NotFoundErrorBoundary>
+        </ErrorBoundary>
       </RoconRoot>
-    </div>
+    </APIProvider>
   )
 }
 

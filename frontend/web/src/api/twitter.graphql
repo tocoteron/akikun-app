@@ -1,0 +1,8 @@
+query searchTweets {
+  tweets {
+    id
+    authorId
+    text
+    createdAt
+  }
+}
